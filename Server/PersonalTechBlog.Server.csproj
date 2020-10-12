@@ -5,12 +5,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201012211434_InitialDb.cs" />
+    <Compile Remove="Migrations\20201012211434_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\20201012212047_InitialDb.cs" />
+    <Compile Remove="Migrations\20201012212047_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\20201012212827_InitialDb.cs" />
+    <Compile Remove="Migrations\20201012212827_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\20201012212908_InitialDb.cs" />
+    <Compile Remove="Migrations\20201012212908_InitialDb.Designer.cs" />
+    <Compile Remove="Migrations\20201012213314_InitialDb.cs" />
+    <Compile Remove="Migrations\20201012213314_InitialDb.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Client\PersonalTechBlog.Client.csproj" />
     <ProjectReference Include="..\Shared\PersonalTechBlog.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\" />
   </ItemGroup>
 
 
