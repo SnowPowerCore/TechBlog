@@ -51,7 +51,7 @@ namespace PersonalTechBlog.Server.Services.Articles
                         Title = x.Title
                     })
                     .ToList();
-            return null;
+            return new List<Article>();
         }
 
         public async Task<Article> GetSpecificArticle(uint id)
@@ -88,7 +88,7 @@ namespace PersonalTechBlog.Server.Services.Articles
                         .ToList(),
                     Title = article.Title
                 };
-            return null;
+            return new Article();
         }
 
         public Task SaveArticleAsync(Article article) =>
