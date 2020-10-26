@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTechBlog.Client", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTechBlog.Shared", "Shared\PersonalTechBlog.Shared.csproj", "{9959A32A-5A3C-4F99-9367-A43D32B91642}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{15D4D7B9-EA25-42B5-AD2B-D3F3B1E6FB5E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "University Lab Reports", "University Lab Reports", "{15D4D7B9-EA25-42B5-AD2B-D3F3B1E6FB5E}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Documents\НТвП - Лабораторная работа №1.docx = ..\..\..\Documents\НТвП - Лабораторная работа №1.docx
 		..\..\..\Documents\НТвП - Лабораторная работа №1.pdf = ..\..\..\Documents\НТвП - Лабораторная работа №1.pdf
