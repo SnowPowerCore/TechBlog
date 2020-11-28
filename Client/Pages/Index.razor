@@ -1,5 +1,42 @@
-﻿@page "/"
+﻿@using PersonalTechBlog.Shared.Models
+@using PersonalTechBlog.Client.Services.Article
 
-<h1>Hello, world!</h1>
+@page "/"
 
-Welcome to your new app.
+@inject IArticlesService ArticlesService
+
+@if (Articles.Count > 0)
+{
+    <MatBlazor.MatList Class="d-flex flex-column align-items-center">
+        @foreach (var article in Articles)
+        {
+            <MatBlazor.MatCard Style="margin:0.5rem;cursor:pointer;" Class="w-75 mat-elevation-z6">
+                <MatBlazor.MatRipple>
+                    <MatBlazor.MatCardContent Style="pointer-events:none;">
+                        <MatBlazor.MatHeadline5 Style="padding:0.5rem;">
+                            @article.Title
+                        </MatBlazor.MatHeadline5>
+                    </MatBlazor.MatCardContent>
+                    <MatBlazor.MatBody2 Style="padding:0.5rem;">
+                        @article.Content
+                    </MatBlazor.MatBody2>
+                </MatBlazor.MatRipple>
+            </MatBlazor.MatCard>
+        }
+    </MatBlazor.MatList>
+}
+
+@code {
+    private List<Article> Articles { get; set; } =
+        new List<Article>();
+
+    protected override Task OnInitializedAsync()
+    {
+        var updateDataTask = UpdateDataAsync();
+        var initializeTask = base.OnInitializedAsync();
+        return Task.WhenAll(updateDataTask, initializeTask);
+    }
+
+    private Task UpdateDataAsync() =>
+        InvokeAsync(async () => Articles = await ArticlesService.GetArticlesAsync());
+}

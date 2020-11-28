@@ -4,8 +4,8 @@ namespace PersonalTechBlog.Server.Models.Database
 {
     public class PostTagEntity : BaseEntity
     {
-        public string Name { get; set; }
+        public string Name { get; init; }
 
-        public string Url { get; set; }
+        public string Url { get; init; }
     }
 }
