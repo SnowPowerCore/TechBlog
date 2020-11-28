@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PersonalTechBlog.Server.Data.Context;
+using PersonalTechBlog.Server.Data.Repository.Database.Article;
+using PersonalTechBlog.Server.Services.Articles;
 using System.Linq;
 
 namespace PersonalTechBlog.Server
@@ -22,9 +25,18 @@ namespace PersonalTechBlog.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddResponseCompression(opts =>
+            {
+                opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+                    new[] { "application/octet-stream" });
+            });
 
-            services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddDbContext<BlogDbContext>(options =>
+                options.UseSqlite("Data Source=Files/techblog.db"));
+
+            services.AddScoped<IArticlesRepository, ArticlesRepository>();
+            services.AddScoped<IArticlesService, ArticlesService>();
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,6 +54,7 @@ namespace PersonalTechBlog.Server
                 app.UseHsts();
             }
 
+            app.UseResponseCompression();
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
@@ -50,7 +63,6 @@ namespace PersonalTechBlog.Server
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });

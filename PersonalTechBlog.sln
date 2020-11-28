@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalTechBlog.Server", "Server\PersonalTechBlog.Server.csproj", "{3681B891-F43F-4E15-9746-E039727BE23C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTechBlog.Server", "Server\PersonalTechBlog.Server.csproj", "{3681B891-F43F-4E15-9746-E039727BE23C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalTechBlog.Client", "Client\PersonalTechBlog.Client.csproj", "{9775E4CF-DA97-4FF8-85FB-ADDB44A50158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTechBlog.Client", "Client\PersonalTechBlog.Client.csproj", "{9775E4CF-DA97-4FF8-85FB-ADDB44A50158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalTechBlog.Shared", "Shared\PersonalTechBlog.Shared.csproj", "{9959A32A-5A3C-4F99-9367-A43D32B91642}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTechBlog.Shared", "Shared\PersonalTechBlog.Shared.csproj", "{9959A32A-5A3C-4F99-9367-A43D32B91642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "University Lab Reports", "University Lab Reports", "{15D4D7B9-EA25-42B5-AD2B-D3F3B1E6FB5E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\НТвП - Лабораторная работа №1.docx = ..\..\..\Documents\НТвП - Лабораторная работа №1.docx
+		..\..\..\Documents\НТвП - Лабораторная работа №1.pdf = ..\..\..\Documents\НТвП - Лабораторная работа №1.pdf
+		..\..\..\Documents\НТвП - Лабораторная работа №2.docx = ..\..\..\Documents\НТвП - Лабораторная работа №2.docx
+		..\..\..\Documents\НТвП - Лабораторная работа №2.pdf = ..\..\..\Documents\НТвП - Лабораторная работа №2.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
