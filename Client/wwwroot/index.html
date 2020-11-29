@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Personal Tech Blog</title>
     <base href="/" />
+    <link href="css/fluent-icons-regular/style.css" rel="stylesheet" />
+    <link href="css/fluent-icons-filled/style.css" rel="stylesheet" />
+    <link href="css/open-sans-regular/style.css" rel="stylesheet" />
+    <link href="css/open-sans-extrabold/style.css" rel="stylesheet" />
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
@@ -22,8 +26,16 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/MatBlazor/dist/matBlazor.js"></script>
-    <link href="_content/MatBlazor/dist/matBlazor.css" rel="stylesheet" />
+    <script>
+        window.blazorCulture = {
+            get: () =>
+            {
+                let result = localStorage['BlazorCulture'];
+                return result ? result : navigator.language || navigator.userLanguage || 'en';
+            },
+            set: (value) => localStorage['BlazorCulture'] = value
+        };
+    </script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 

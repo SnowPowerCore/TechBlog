@@ -36,6 +36,7 @@ namespace PersonalTechBlog.Server
 
             services.AddScoped<IArticlesRepository, ArticlesRepository>();
             services.AddScoped<IArticlesService, ArticlesService>();
+
             services.AddControllers();
         }
 

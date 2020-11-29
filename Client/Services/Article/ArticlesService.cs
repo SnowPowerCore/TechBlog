@@ -8,7 +8,7 @@ namespace PersonalTechBlog.Client.Services.Article
 {
     public class ArticlesService : IArticlesService
     {
-        private IArticlesApi _articles;
+        private readonly IArticlesApi _articles;
 
         public ArticlesService(IHttpClientFactory clientFactory)
         {

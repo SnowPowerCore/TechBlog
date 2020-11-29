@@ -4,27 +4,25 @@
 @page "/"
 
 @inject IArticlesService ArticlesService
+@inject IStringLocalizer<AppResources> Localizer
 
-@if (Articles.Count > 0)
-{
-    <MatBlazor.MatList Class="d-flex flex-column align-items-center">
-        @foreach (var article in Articles)
-        {
-            <MatBlazor.MatCard Style="margin:0.5rem;cursor:pointer;" Class="w-75 mat-elevation-z6">
-                <MatBlazor.MatRipple>
-                    <MatBlazor.MatCardContent Style="pointer-events:none;">
-                        <MatBlazor.MatHeadline5 Style="padding:0.5rem;">
-                            @article.Title
-                        </MatBlazor.MatHeadline5>
-                    </MatBlazor.MatCardContent>
-                    <MatBlazor.MatBody2 Style="padding:0.5rem;">
-                        @article.Content
-                    </MatBlazor.MatBody2>
-                </MatBlazor.MatRipple>
-            </MatBlazor.MatCard>
-        }
-    </MatBlazor.MatList>
-}
+<div>
+    <div class="d-flex flex-column align-items-center">
+        <span class="header-label">@Localizer["welcomeLabel"]</span>
+    </div>
+    @if (Articles.Count > 0)
+    {
+        <div class="d-flex flex-column align-items-center">
+            @foreach (var article in Articles)
+            {
+                <div class="d-flex flex-column align-items-start w-75 bg-light" style="margin: 0.5rem;">
+                    <label>@article.Title</label>
+                    <label>@article.Content</label>
+                </div>
+            }
+        </div>
+    }
+</div>
 
 @code {
     private List<Article> Articles { get; set; } =
