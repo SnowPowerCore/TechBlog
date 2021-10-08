@@ -61,7 +61,34 @@ namespace PersonalTechBlog.Client.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hi!.
+        ///   Looks up a localized string similar to It&apos;s empty here and there.
+        /// </summary>
+        public static string emptyLabel {
+            get {
+                return ResourceManager.GetString("emptyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First time in here?.
+        /// </summary>
+        public static string firstTimeHereQuestionLabel {
+            get {
+                return ResourceManager.GetString("firstTimeHereQuestionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s a blog..
+        /// </summary>
+        public static string itsBlogLabel {
+            get {
+                return ResourceManager.GetString("itsBlogLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi! 👋.
         /// </summary>
         public static string welcomeLabel {
             get {

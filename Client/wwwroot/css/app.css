@@ -8,7 +8,7 @@ html, body {
 .page {
     position: relative;
     display: flex;
-    flex-direction: row;
+    height: 100vh;
 }
 
 a, .btn-link {
@@ -60,9 +60,12 @@ app {
 .sidebar {
     display: flex;
     flex-direction: column;
-    position: sticky;
     box-shadow: 0px 0px 20px darkgray;
-    max-width: 4.1rem;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.sidebar:hover {
+    box-shadow: 0px 0px 30px darkgray;
 }
 
     .sidebar .top-row {
@@ -141,12 +144,92 @@ app {
                 color: white;
             }
 
+/* Dynamic icons */
+
+.home_icon:before {
+    font-family: 'FluentSystemIcons-Regular';
+    content: "\f480";
+}
+
+.active .home_icon:before {
+    font-family: 'FluentSystemIcons-Filled';
+    content: "\f487";
+}
+
+.search_icon:before {
+    font-family: 'FluentSystemIcons-Regular';
+    content: "\f68f";
+}
+
+.active .search_icon:before {
+    font-family: 'FluentSystemIcons-Filled';
+    content: "\f699";
+}
+
+.person_icon:before {
+    font-family: 'FluentSystemIcons-Regular';
+    content: "\f5bd";
+}
+
+.active .person_icon:before {
+    font-family: 'FluentSystemIcons-Filled';
+    content: "\f5c7";
+}
+
+.settings_icon:before {
+    font-family: 'FluentSystemIcons-Regular';
+    content: "\f6a9";
+}
+
+.active .settings_icon:before {
+    font-family: 'FluentSystemIcons-Filled';
+    content: "\f6b2";
+}
+
+.box_icon:before {
+    font-family: 'FluentSystemIcons-Regular';
+    content: "\f552";
+}
+
+/* End of dynamic icons */
+
 /* Styles for common reuse */
+
+.divider {
+    border-top: 2px solid #000;
+    border-radius: 6px;
+}
 
 .header-label {
     font-family: 'OpenSans-ExtraBold';
     font-size: 4rem;
-    color: aqua;
+}
+
+.header-small-label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.article_title {
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+.elevation {
+    box-shadow: 0px 0px 5px darkgray;
+    transition: box-shadow 0.2s ease-in-out;
+}
+    
+    .elevation:hover {
+        box-shadow: 0px 0px 10px darkgray;
+    }
+
+.cursor_hand {
+    cursor: pointer;
+}
+
+.rounded_box {
+    border-radius: 12px;
 }
 
 /*End of styles for common reuse */
@@ -191,6 +274,14 @@ app {
     }
 
 @media (max-width: 767.98px) {
+    .page {
+        flex-direction: column-reverse;
+    }
+
+    .sidebar {
+        top: 0;
+    }
+
     .main .top-row:not(.auth) {
         display: none;
     }
@@ -202,6 +293,22 @@ app {
     .main .top-row a, .main .top-row .btn-link {
         margin-left: 0;
     }
+
+    .sidebar .collapse {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .sidebar .top_items {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sidebar .bottom_items {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 768px) {
@@ -209,11 +316,17 @@ app {
         flex-direction: row;
     }
 
+    .page {
+        flex-direction: row;
+    }
+
     .sidebar {
+        border-radius: 12px;
         width: 250px;
-        height: 100vh;
         position: sticky;
         top: 0;
+        max-width: 4.1rem;
+        margin: 1.5rem 0 1.5rem 1rem;
     }
 
     .main .top-row {
@@ -233,5 +346,18 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+
+    .sidebar .top_items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar .bottom_items {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PersonalTechBlog.Server.Data.Configuration;
 using PersonalTechBlog.Server.Models.Database;
 
 namespace PersonalTechBlog.Server.Data.Context
@@ -38,6 +39,8 @@ namespace PersonalTechBlog.Server.Data.Context
             modelBuilder.Entity<ArticleEntity>().ToTable("Articles");
 
             modelBuilder.Entity<AuthorEntity>().ToTable("Authors");
+            
+            modelBuilder.ApplyConfiguration(new AuthorConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

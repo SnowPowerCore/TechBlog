@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="emptyLabel" xml:space="preserve">
+    <value>It's empty here and there</value>
+  </data>
+  <data name="firstTimeHereQuestionLabel" xml:space="preserve">
+    <value>First time in here?</value>
+  </data>
+  <data name="itsBlogLabel" xml:space="preserve">
+    <value>It's a blog.</value>
+  </data>
   <data name="welcomeLabel" xml:space="preserve">
-    <value>Hi!</value>
+    <value>Hi! 👋</value>
   </data>
 </root>

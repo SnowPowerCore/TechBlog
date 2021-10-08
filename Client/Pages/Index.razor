@@ -1,26 +1,42 @@
 ﻿@using PersonalTechBlog.Shared.Models
 @using PersonalTechBlog.Client.Services.Article
+@using PersonalTechBlog.Client.Shared.Article
 
 @page "/"
 
 @inject IArticlesService ArticlesService
 @inject IStringLocalizer<AppResources> Localizer
 
-<div>
-    <div class="d-flex flex-column align-items-center">
-        <span class="header-label">@Localizer["welcomeLabel"]</span>
+<div class="d-flex flex-column">
+    <div class="d-flex flex-column align-items-start w-75 header-label"
+         style="margin-left: 6rem;">
+        <span style="
+            background-color: #0078D7;
+            height: 3.75rem;
+            width: 2.5rem;
+            position: absolute;" />
+        <span class="pl-3 pr-3" style="z-index: 1;">
+            @Localizer["welcomeLabel"]
+        </span>
+    </div>
+    <div class="d-flex flex-column align-items-end w-75 header-small-label"
+         style="margin-left: 6rem; position: relative;">
+        <span style="
+            background-color: #0078D7;
+            height: 0.25rem;
+            width: 2.5rem;
+            top: 100%;
+            position: absolute;" />
+        <span class="pl-3 pr-3" style="z-index: 1;">
+            @Localizer["firstTimeHereQuestionLabel"] <a href="/">@Localizer["itsBlogLabel"]</a>
+        </span>
+    </div>
+    <div class="d-flex flex-column align-items-center my-4">
+        <span class="divider w-25"/>
     </div>
     @if (Articles.Count > 0)
     {
-        <div class="d-flex flex-column align-items-center">
-            @foreach (var article in Articles)
-            {
-                <div class="d-flex flex-column align-items-start w-75 bg-light" style="margin: 0.5rem;">
-                    <label>@article.Title</label>
-                    <label>@article.Content</label>
-                </div>
-            }
-        </div>
+        <ArticleListComponent Articles="@Articles"/>
     }
 </div>
 

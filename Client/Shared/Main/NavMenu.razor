@@ -1,22 +1,23 @@
-﻿<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <div class="nav flex-column align-items-end">
+﻿<div class="@NavMenuCssClass"
+     @onclick="ToggleNavMenu">
+    <div class="nav top_items align-items-end">
         <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
             <span class="active_selection" />
-            <div class="oi icon-ic_fluent_home_20_regular" aria-hidden="true"></div>
+            <div class="oi home_icon" aria-hidden="true"></div>
         </NavLink>
         <NavLink class="nav-link" href="search" Match="NavLinkMatch.All">
             <span class="active_selection" />
-            <div class="oi icon-ic_fluent_search_20_regular" aria-hidden="true"></div>
+            <div class="oi search_icon" aria-hidden="true"></div>
         </NavLink>
     </div>
-    <div class="nav flex-column align-items-end" style="margin-top:auto;position:fixed;bottom:0;">
+    <div class="nav bottom_items align-items-end">
         <NavLink class="nav-link" href="auth" Match="NavLinkMatch.All">
             <span class="active_selection" />
-            <div class="oi icon-ic_fluent_person_20_regular" aria-hidden="true"></div>
+            <div class="oi person_icon" aria-hidden="true"></div>
         </NavLink>
         <NavLink class="nav-link" href="settings" Match="NavLinkMatch.All">
             <span class="active_selection" />
-            <div class="oi icon-ic_fluent_settings_20_regular" aria-hidden="true"></div>
+            <div class="oi settings_icon" aria-hidden="true"></div>
         </NavLink>
     </div>
 </div>
